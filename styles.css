@@ -1,0 +1,81 @@
+@font-face {
+  font-family: Hack;
+  src: url(Hack-Regular.ttf);
+}
+body {
+  background-color: #1b1f25;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Hack';
+  gap: 1em;
+  min-height: 100vh;
+  margin: 0;
+}
+
+nav {
+  align-items: center;
+  background-color: #22262d;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: space-evenly;
+  padding: 1em;
+
+  /* CHECK IF ITS POSSIBLE TO USE BREAK-WORD INSTEAD, NOT ANYWHERE */
+  overflow-wrap: anywhere;
+}
+nav > a {
+  color: #fff;
+  padding: 1em;
+  text-decoration: none;
+}
+nav > a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+section {
+  background-color: #22262d;
+  margin: 0 1em 0 1em;
+  overflow-wrap: break-word;
+  padding: 1em;
+  
+  /* MAYBE PUT THIS SOMEWHERE ELSE */
+  line-height: 1em;
+
+  text-align: center;
+}
+section > hr {
+  background-color: gray;
+  border: none;
+  /* IS IT POSSIBLE TO USE EM INSTEAD OF PX */
+  height: 2px;
+}
+
+p > a {
+  color: #5bcefa;
+}
+
+footer {
+  align-items: center;
+  background-color: #22262d;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: space-evenly;
+  margin-top: auto;
+  padding: 1em;
+
+  /* CHECK IF ITS POSSIBLE TO USE BREAK-WORD INSTEAD, NOT ANYWHERE */
+  overflow-wrap: anywhere;
+}
+footer > a {
+  color: #fff;
+  padding: 1em;
+  text-decoration: none;
+}
+footer > a:hover {
+  background-color: #fff;
+  color: #000;
+}
