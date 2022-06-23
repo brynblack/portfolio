@@ -52,11 +52,12 @@ section > hr {
   /* IS IT POSSIBLE TO USE EM INSTEAD OF PX */
   height: 2px;
 }
-
+section > img {
+  width: 100%;
+}
 p > a {
   color: #5bcefa;
 }
-
 footer {
   align-items: center;
   background-color: #22262d;
