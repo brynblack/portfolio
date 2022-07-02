@@ -2,6 +2,7 @@
   font-family: Hack;
   src: url(Hack-Regular.ttf);
 }
+
 body {
   background-color: #1b1f25;
   color: #fff;
@@ -9,9 +10,11 @@ body {
   flex-direction: column;
   font-family: 'Hack';
   gap: 1em;
-  min-height: 100vh;
   margin: 0;
+  min-height: 100vh;
+  text-align: center;
 }
+
 nav {
   align-items: center;
   background-color: #22262d;
@@ -24,12 +27,14 @@ nav {
   /* CHECK IF ITS POSSIBLE TO USE BREAK-WORD INSTEAD, NOT ANYWHERE */
   overflow-wrap: anywhere;
 }
-nav > a {
+
+footer > a, nav > a {
   color: #fff;
   padding: 1em;
   text-decoration: none;
 }
-nav > a:hover {
+
+footer > a:hover, nav > a:hover {
   background-color: #fff;
   color: #000;
 }
@@ -42,21 +47,24 @@ section {
   
   /* MAYBE PUT THIS SOMEWHERE ELSE */
   line-height: 2em;
-
-  text-align: center;
 }
+
 section > hr {
   background-color: gray;
   border: none;
+
   /* IS IT POSSIBLE TO USE EM INSTEAD OF PX */
   height: 2px;
 }
+
 section > img {
   width: 100%;
 }
+
 p > a {
   color: #5bcefa;
 }
+
 footer {
   align-items: center;
   background-color: #22262d;
@@ -70,11 +78,13 @@ footer {
   /* CHECK IF ITS POSSIBLE TO USE BREAK-WORD INSTEAD, NOT ANYWHERE */
   overflow-wrap: anywhere;
 }
+
 footer > a {
   color: #fff;
   padding: 1em;
   text-decoration: none;
 }
+
 footer > a:hover {
   background-color: #fff;
   color: #000;
