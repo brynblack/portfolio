@@ -1,91 +1,187 @@
-@font-face {
-  font-family: Hack;
-  src: url(Hack-Regular.ttf);
+@import url('reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --night: #111715ff;
+  --night-2: #101415ff;
+  --night-3: #101011ff;
+  --night-4: #0d0d0eff;
+  --black: #090708ff;
+
+  --purple: rgb(123, 31, 162);
+  --violet: rgb(103, 58, 183);
+  --pink: rgb(244, 143, 177);
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: -200% center;
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 2.5rem;
+  text-shadow: black 0px 0px 10px;
+}
+
+h2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 2rem;
+  text-shadow: black 0px 0px 10px;
+}
+
+html {
+  color: #ffffff;
+  font-family: "Rubik", sans-serif;
 }
 
 body {
-  background-color: #1b1f25;
-  color: #fff;
+  background-color: var(--black);
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Hack';
-  gap: 1em;
-  margin: 0;
-  min-height: 100vh;
-  text-align: center;
 }
 
 nav {
+  background-color: var(--night-3);
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  text-decoration-color: inherit;
+}
+
+.nav-inner {
   align-items: center;
-  background-color: #22262d;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: space-evenly;
-  padding: 1em;
-
-  /* CHECK IF ITS POSSIBLE TO USE BREAK-WORD INSTEAD, NOT ANYWHERE */
-  overflow-wrap: anywhere;
+  height: 5rem;
+  justify-content: space-between;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
-footer > a, nav > a {
-  color: #fff;
-  padding: 1em;
-  text-decoration: none;
+.nav-logo img {
+  border-radius: 0.2rem;
+  width: 2rem;
 }
 
-footer > a:hover, nav > a:hover {
-  background-color: #fff;
-  color: #000;
+.nav-links {
+  display: flex;
+  gap: 2rem;
 }
 
-section {
-  background-color: #22262d;
-  margin: 0 1em 0 1em;
-  overflow-wrap: break-word;
-  padding: 1em;
-  
-  /* MAYBE PUT THIS SOMEWHERE ELSE */
-  line-height: 2em;
+.nav-links a {
+  background-color: transparent;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
 }
 
-section > hr {
-  background-color: gray;
-  border: none;
-
-  /* IS IT POSSIBLE TO USE EM INSTEAD OF PX */
-  height: 2px;
+.nav-links a:hover {
+  background-color: var(--night);
 }
 
-section > img {
+.hamburger-icon {
+  display: none;
+  filter: invert(100%);
+}
+
+.fancy-content {
+  height: 100%;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
 }
 
-p > a {
-  color: #5bcefa;
+.square {
+  transition-duration: 0.25s;
+  transition-timing-function: linear;
 }
 
-footer {
-  align-items: center;
-  background-color: #22262d;
+.info-box {
+  margin: 3rem;
+  position: absolute;
+  bottom: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: space-evenly;
-  margin-top: auto;
-  padding: 1em;
-
-  /* CHECK IF ITS POSSIBLE TO USE BREAK-WORD INSTEAD, NOT ANYWHERE */
-  overflow-wrap: anywhere;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-footer > a {
-  color: #fff;
-  padding: 1em;
-  text-decoration: none;
+.info-box-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-footer > a:hover {
-  background-color: #fff;
-  color: #000;
+
+.info-box-links a {
+  transition-duration: 100ms;
+  filter: grayscale(1);
+}
+
+.info-box-links a:hover {
+  filter: grayscale(0);
+}
+
+.info-box-links a img {
+  width: 1.5rem;
+}
+
+.magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  text-shadow: #ffffff33 0px 0px 20px;
+}
+
+@media (max-width: 668px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+  h2 {
+    font-size: 0.84375rem;
+  }
+  .info-box {
+    margin-left: 1rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-inner {
+    justify-content: center;
+  }
+  .hamburger-icon {
+    position: absolute;
+    left: 2rem;
+    display: block;
+  }
+}
+
+.main-content {
+  margin: 3rem;
+  max-width: 100%;
+  max-height: 100%;
 }
