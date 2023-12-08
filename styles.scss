@@ -200,8 +200,8 @@ nav {
 .home-page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
 
   .fancy-content {
     height: 100%;
@@ -252,8 +252,8 @@ nav {
 .about-page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
 
   .main-content {
     padding: 2rem;
